@@ -9,27 +9,37 @@ function setup() {
   rectMode(CENTER)
 
   PALETE = [
-    color(255, 52, 154), //pink
-    color(4, 0, 152)
+    color(190, 190, 190), //pink
+    color(120, 120, 120)
   ]
 }
 
 function draw() {
-  testLines()
+  //testLines()
+  outlineShape()
+}
+
+function outlineShape () {
+  const strokeColor = getRandomFromPalette()
+  const weight = randomSelectTwo() ? 1 : 3
+  const hexagonTrue = randomSelectTwo()
+
+  stroke(strokeColor)
+  strokeWeight(weight)
+  push()
+  translate(width/2, height/2)
+  if (hexagonTrue) {
+    hexagon(0, 0, CRYSTAL_SIZE / 2)
+  } else {
+    ellipse(0, 0, CRYSTAL_SIZE, CRYSTAL_SIZE)
+  }
+  pop()
 }
 
 function testLines () {
-  const rando = random(1)
-  let numShapes 
-  if (rando > 0.5) {
-    numShapes = SIDES
-  } else {
-    numShapes = SIDES * 2
-  }
-
-  const rando2 = floor(random(0, PALETE.length))
-  const strokeColor = PALETE[rando2]
-  console.log(rando2)
+  let numShapes = randomSelectTwo() ? SIDES : SIDES * 2
+  const strokeColor = getRandomFromPalette();
+  console.log(strokeColor)
 
   noFill()
   stroke(PALETE[0])
@@ -43,4 +53,18 @@ function testLines () {
       rotate(angle)
     }
   pop()
+}
+
+function randomSelectTwo() {
+  const rando = random(1)
+  if (rando > 0.5) {
+    return true
+  } else {
+    return false
+  }
+}
+
+function getRandomFromPalette () {
+  const rando2 = floor(random(0, PALETE.length))
+  return PALETE[rando2]
 }
