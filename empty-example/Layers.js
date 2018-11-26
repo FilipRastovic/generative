@@ -6,7 +6,7 @@ class Layer {
     this.stepsOut = 8
     this.singleStep = (CRYSTAL_SIZE / 2) / this.stepsOut
     this.thinStroke = 1 
-    this.thickStroke = 3
+    this.thickStroke = 1
     this.strokeColor = getRandomFromPalette()
   }
 }
