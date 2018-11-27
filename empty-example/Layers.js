@@ -5,8 +5,8 @@ class Layer {
     this.angle = 360 / this.numShapes
     this.stepsOut = 8
     this.singleStep = (CRYSTAL_SIZE / 2) / this.stepsOut
-    this.thinStroke = 1 
-    this.thickStroke = 1
+    this.thinStroke = 1
+    this.thickStroke = 3
     this.strokeColor = getRandomFromPalette()
   }
 }
@@ -24,7 +24,7 @@ class Circles extends Layer {
     strokeWeight(1)
     push()
     translate(width/2, height/2)
-    for (let i = 0; i <=this.numShapes; i++) {
+    for (let i = 0; i <= this.numShapes; i++) {
       ellipse(this.position, 0, this.shapeSize, this.shapeSize)
       rotate(this.angle)
     }
@@ -50,8 +50,8 @@ class SimpleLines extends Layer {
     strokeWeight(this.weight)
     push()
       translate(width/2, height/2)
-      for (let i = 0; i < this.numShapes; i ++) {
-        line(this.start * this.step, 0, this.stop * this.step, 0)
+      for (let i = 0; i < this.numShapes; i++) {
+        line(this.start * this.step, 0, this.stop * this.step, 0)  
         rotate(this.angle)
       }
     pop()
@@ -59,7 +59,7 @@ class SimpleLines extends Layer {
 }
 
 class OutlineShape extends Layer {
-  constructor() {
+  constructor () {
     super()
     this.weight = randomSelectTwo() ? this.thinStroke : this.thickStroke
     this.hexagonTrue = randomSelectTwo()

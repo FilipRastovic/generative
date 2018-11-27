@@ -1,47 +1,53 @@
 const CRYSTAL_SIZE = 500
 const SIDES = 6
-let PALETE = []
+let PALETTE = []
+
+const layers = []
 
 function setup() {
   createCanvas(530, 530, SVG)
+
+  PALETTE = [
+    color(255, 52, 154), // pink
+    color(4, 0, 152) // blue
+  ]
+
   noLoop()
   angleMode(DEGREES)
   rectMode(CENTER)
-
-  PALETE = [
-    color(190, 190, 190), //pink
-    color(220, 220, 220)
-  ]
 }
 
 function draw() {
-  const circles = new Circles()
-  circles.render()
+  // const cirlces = new Circles()
+  // cirlces.render()
 
-  const simpleLines = new SimpleLines()
-  simpleLines.render()
+  // const simpleLines = new SimpleLines()
+  // simpleLines.render()
 
-  const outlineShape = new OutlineShape()
-  outlineShape.render()
+  // const outlineShape = new OutlineShape()
+  // outlineShape.render()
 
-  testLines()
-  // outlineShape()
+  // testLines()
+  //outlineShape()
   // simpleLines()
-  // circle()
+  //circles()
 
-  // let picker = random(1)
-  // if (picker > 0.3) {
-  //   outlineShape()
-  // }
+  let picker = random(1)
+  if (picker > 0.3) {
+    layers.push(new OutlineShape())
+  }
 
-  // picker = random(1)
-  // if(picker > 0.3) {
-  //   simpleLines()
-  // }
+  picker = random(1)
+  if (picker > 0.3) {
+    layers.push(new SimpleLines())
+  }
 
-  // picker = random(1)
-  // if (picker > 0.3) {
-  //   circles()
-  // }
+  picker = random(1)
+  if (picker > 0.3) {
+    layers.push(new Circles())
+  }
+
+  layers.forEach(layer => {
+    layer.render()
+  })
 }
-
