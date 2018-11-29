@@ -32,22 +32,22 @@ function draw() {
   // simpleLines()
   //circles()
 
-  let picker = random(1)
-  if (picker > 0.3) {
-    layers.push(new OutlineShape())
-  }
+  // let picker = random(1)
+  // if (picker > 0.3) {
+  //   layers.push(new OutlineShape())
+  // }
 
-  picker = random(1)
-  if (picker > 0.3) {
-    layers.push(new SimpleLines())
-  }
+  // picker = random(1)
+  // if (picker > 0.3) {
+  //   layers.push(new SimpleLines())
+  // }
 
-  picker = random(1)
-  if (picker > 0.3) {
-    layers.push(new Circles())
-  }
+  // picker = random(1)
+  // if (picker > 0.3) {
+  //   layers.push(new Circles())
+  // }
 
-  layers.forEach(layer => {
-    layer.render()
-  })
+  // layers.forEach(layer => {
+  //   layer.render()
+  // })
 }

@@ -7,7 +7,7 @@ class Layer {
     this.singleStep = (CRYSTAL_SIZE / 2) / this.stepsOut
     this.thinStroke = 1
     this.thickStroke = 3
-    this.strokeColor = getRandomFromPalette()
+    this.layerColor = getRandomFromPalette()
   }
 }
 
@@ -20,7 +20,7 @@ class Circles extends Layer {
 
   render() {
     noFill()
-    stroke(this.strokeColor)
+    stroke(this.layerColor)
     strokeWeight(1)
     push()
     translate(width/2, height/2)
@@ -46,7 +46,7 @@ class SimpleLines extends Layer {
 
   render() {
     noFill()
-    stroke(this.strokeColor)
+    stroke(this.layerColor)
     strokeWeight(this.weight)
     push()
       translate(width/2, height/2)
@@ -66,7 +66,7 @@ class OutlineShape extends Layer {
   }
 
   render () {
-    stroke(this.strokeColor)
+    stroke(this.layerColor)
     strokeWeight(this.weight)
     push()
     translate(width/2, height/2)
