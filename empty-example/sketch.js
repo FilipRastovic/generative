@@ -18,36 +18,32 @@ function setup() {
 }
 
 function draw() {
-  // const cirlces = new Circles()
-  // cirlces.render()
 
-  // const simpleLines = new SimpleLines()
-  // simpleLines.render()
+  layerConstructors.forEach(lcon => {
+    let picker = random(1)
+    if (picker > lcon.weight) {
+      layers.push(lcon.init())
+    }
+  })
 
-  // const outlineShape = new OutlineShape()
-  // outlineShape.render()
+  console.log(layers)
 
-  // testLines()
-  //outlineShape()
-  // simpleLines()
-  //circles()
-
-  // let picker = random(1)
-  // if (picker > 0.3) {
-  //   layers.push(new OutlineShape())
-  // }
-
-  // picker = random(1)
-  // if (picker > 0.3) {
-  //   layers.push(new SimpleLines())
-  // }
-
-  // picker = random(1)
-  // if (picker > 0.3) {
-  //   layers.push(new Circles())
-  // }
-
-  // layers.forEach(layer => {
-  //   layer.render()
-  // })
+  layers.forEach(layer => {
+    layer.render()
+  })
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
