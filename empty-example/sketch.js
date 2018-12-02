@@ -2,8 +2,6 @@ const CRYSTAL_SIZE = 500
 const SIDES = 6
 let PALETTE = []
 
-const layers = []
-
 function setup() {
   createCanvas(530, 530, SVG)
 
@@ -19,18 +17,11 @@ function setup() {
 
 function draw() {
 
-  layerConstructors.forEach(lcon => {
-    let picker = random(1)
-    if (picker > lcon.weight) {
-      layers.push(lcon.init())
-    }
-  })
+  // go to a point on the screen and draw a pixel
+  // continue to do this until we run out of room
 
-  console.log(layers)
-
-  layers.forEach(layer => {
-    layer.render()
-  })
+  const oneCrystal = new Crystal(width/2, height/2)
+  oneCrystal.render()
 }
 
 
