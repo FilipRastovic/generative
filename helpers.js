@@ -80,13 +80,13 @@ const layerConstructors = [
     weight: 0.3
   },
   {
-    name: 'Circles',
-    init: () => new Circles(),
+    name: 'Centered Shape',
+    init: () => new CenteredShape(),
     weight: 0.3
   },
   {
-    name: 'Centered Shape',
-    init: () => new CenteredShape(),
+    name: 'Circles',
+    init: () => new Circles(),
     weight: 0.3
   },
   {
@@ -107,11 +107,36 @@ const layerConstructors = [
   {
     name: 'Stepped Hexagons',
     init: () => new SteppedHexagons(),
-    weight: 1
+    weight: 0.7
   },
   {
     name: 'Test Lines',
     init: () => new TestLines(),
     weight: 1
-  },
+  }
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
